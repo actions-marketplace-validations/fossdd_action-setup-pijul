@@ -1,0 +1,11 @@
+name: 'Setup Pijul'
+description: 'Set up your GitHub Actions workflow with Pijul'
+inputs:
+  version:
+    description: 'Select the pijul version to install'
+    default: '~1.0.0-alpha'
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/setup.sh ${{ inputs.version }}
+      shell: bash
